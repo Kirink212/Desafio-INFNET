@@ -1,7 +1,6 @@
-module.exports = function(app) {
+module.exports = function(router) {
     var controller = require('../controllers/subject');
 
-    app.route('/curso')
-        .post(controller.list)
-        .options(function(req, res) {res.json({})});
+    router.get('/curso', controller.list);
+    router.post('/curso', controller.create);
 }

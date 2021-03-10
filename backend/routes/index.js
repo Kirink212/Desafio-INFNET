@@ -1,4 +1,4 @@
-module.exports = function(app) {
-    require('./user')(app);
-    require('./subject')(app);
-}
+module.exports = function(router) {
+    require('./user')(router);
+    require('./subject')(router);
+};
