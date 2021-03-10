@@ -1,7 +1,4 @@
-
-const jwt = require('jsonwebtoken');
 const Subject = require("../models/subject");
-const { verifyJWT } = require("../utils/utils");
 
 const create = (req, res) => {
     var body = req.body;
@@ -14,8 +11,6 @@ const create = (req, res) => {
 };
 
 const list = (req, res) => {
-    verifyJWT(jwt, req, res);
-
     (async () => {
         const subjects = await Subject.findAll();
 
