@@ -21,15 +21,12 @@ const SubjectList = () => {
             return <Card>
                 <CardContent>
                     <Typography variant="h4"> Subjects List </Typography>
-                    {/* <ul>
-                        {subjects.map((subject: any) => <li key={subject.id}>{subject.description}</li>)}
-                    </ul> */}
                     <List>
                         {
                             subjects.map((subject: any) => (
                                 <>
                                     <ListItem key={subject.id}>
-                                        <ListItemText primary={subject.description} />
+                                        <ListItemText key={subject.id} primary={subject.description} />
                                     </ListItem>
                                     <Divider />
                                 </>
@@ -40,7 +37,7 @@ const SubjectList = () => {
             </Card>;
         }
 
-        return <Typography variant="h4"> You're not allowed to see the subjects! </Typography>
+        return <Typography variant="h4"> Login to see the subjects! </Typography>
     }
 
     return showSubjects();
