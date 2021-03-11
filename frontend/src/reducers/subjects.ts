@@ -1,9 +1,9 @@
-const reducer = (state = {}, action: any) => {
+const reducer = (data = [], action: any) => {
     switch(action.type) {
         case 'FETCH_ALL':
-            return state;
+            return action.payload;
         default:
-            return state;
+            return data;
     }
 }
 

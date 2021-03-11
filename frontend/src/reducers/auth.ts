@@ -1,9 +1,15 @@
-const reducer = (state = {}, action: any) => {
+const reducer = (data = [], action: any) => {
     switch(action.type) {
         case 'LOGIN':
-            return state;
+            localStorage.setItem('token', action.payload.token);
+
+            return action.payload;
+        case 'LOGOUT':
+            localStorage.clear();
+
+            return data;
         default:
-            return state;
+            return data;
     }
 }
 
